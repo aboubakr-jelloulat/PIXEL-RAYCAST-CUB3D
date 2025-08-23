@@ -1,10 +1,73 @@
-NAME = cub3D
-LIBFT = ./shared/libft/libft.a
+NAME		= cub3D
 
-CFLAGS = -Wall -Wextra -Werror -ffast-math  -O3  #-fsanitize=address -g
+# Directories
+SRC_DIR		= mandatory
+INCLUDE_DIR	= includes
+SHARED_DIR	= shared
+
+# Sub-directories
+PARSING_DIR		= $(SRC_DIR)/parsing
+RAYCASTING_DIR	= $(SRC_DIR)/raycasting
+RENDER_DIR		= $(SRC_DIR)/render
+GNL_DIR			= $(SHARED_DIR)/gnl
+LIBFT_DIR		= $(SHARED_DIR)/libft
+
+# Source files
+MAIN_SRC		= $(SRC_DIR)/main.c
+PARSING_SRCS	= $(wildcard $(PARSING_DIR)/*.c)
+RAYCASTING_SRCS	= $(wildcard $(RAYCASTING_DIR)/*.c)
+RENDER_SRCS		= $(wildcard $(RENDER_DIR)/*.c)
+GNL_SRCS		= $(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c
+
+# All source files
+SRCS		= $(MAIN_SRC) $(PARSING_SRCS) $(RAYCASTING_SRCS) $(RENDER_SRCS) $(GNL_SRCS)
+
+# Object files
+OBJS		= $(SRCS:.c=.o)
+
+# Headers
+HEADERS		= $(wildcard $(INCLUDE_DIR)/*.h)
+
+# Libraries
+LIBFT		= $(LIBFT_DIR)/libft.a
+
+# Compiler and flags 
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -ffast-math -O3 #-fsanitize=address -g
+INCLUDES	= -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
+LIBS		= -L$(LIBFT_DIR) -lft
 
 
 
 
+all: $(NAME)
 
-SRC_M = main.c 
+$(LIBFT):
+	@make -C ./shared/libft
+
+$(NAME): $(LIBFT) $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
+	@printf "$(CYAN)\n$(NAME) compiled successfully! ✅$(RESET)\n"
+
+%.o: %.c $(HEADERS)
+	@printf "$(CYAN)Compiling $<$(RESET)\n"
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	@printf "$(RED)Removing object files$(RESET)\n"
+	@rm -f $(OBJS)
+	@make -C ./shared/libft clean
+
+fclean: clean
+	@printf "$(RED)Removing $(NAME)$(RESET)\n"
+	@rm -f $(NAME)
+	@make -C ./shared/libft fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re
+
+
+RESET		= \033[0m
+RED			= \033[31m
+CYAN		= \033[36m

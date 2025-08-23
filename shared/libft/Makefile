@@ -30,21 +30,21 @@ ARCHV        =        ar rcs
 all : $(NAME)
 
 %.o : %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 
 $(NAME) : $(OBJS_FUN)
-	$(ARCHV) $(NAME) $(OBJS_FUN)
+	@$(ARCHV) $(NAME) $(OBJS_FUN)
 
 
 bonus : $(OBJS_BONUS)
-	$(ARCHV) $(NAME) $(OBJS_BONUS)
+	@$(ARCHV) $(NAME) $(OBJS_BONUS)
 
 clean :
-	$(RM) $(OBJS_FUN) $(OBJS_BONUS)
+	@$(RM) $(OBJS_FUN) $(OBJS_BONUS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re : fclean all
 
