@@ -36,7 +36,7 @@ int	is_configuration_keyword(t_cub *cub, char *line, int i, int *succes)
         || ft_strncmp("WE ", line + i, 3) == 0
         || ft_strncmp("EA ", line + i, 3) == 0
         || ft_strncmp("F ", line + i, 2) == 0
-        || ft_strncmp("C ", line + i, 2) == 0)
+        || ft_strncmp("C ", line + i, 2) == 0) 
     {
 		parse_all_wall_textures(cub, line, i, succes);
         
