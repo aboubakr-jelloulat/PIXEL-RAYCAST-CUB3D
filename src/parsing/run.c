@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/25 20:29:33 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/26 19:15:40 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@
 
 */
 
-void	shutdown_cub(t_cub *cub)
-{
 
-}
 
 void	run_cub(t_cub *cub)
 {
@@ -47,7 +44,7 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 	if (valid_file_extension(av[1]) || fd == -1)
 		return (1);
 	if (parse_game_settings(cub, fd) == 1)
-		return (1);  // ********  Rani hna f map loader
+		return (1);
 	
 
 	return (0);
@@ -61,12 +58,12 @@ int	load_game_engine(int ac, char **av)
 	ft_bzero(&cub, sizeof(t_cub));
 	if (load_map_data(&cub, ac, av) == 1) 
 	{
-		shutdown_cub();
+		shutdown_cub(&cub);
 		return (1);
 	}
 	if (init_cub(&cub) == 1)
 	{
-		shutdown_cub(&cub)
+		shutdown_cub(&cub);
 		return 1;
 	}
 	run_cub(&cub);

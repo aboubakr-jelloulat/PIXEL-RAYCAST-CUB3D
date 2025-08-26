@@ -1,54 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_key.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/26 16:43:39 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/08/26 19:33:28 by ajelloul         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3d.h"
-
-int	skip_spaces(char **line)
-{
-	int	i;
-
-	i = 0;
-	while ((*line)[i] == ' ' || (*line)[i] == '\t')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	add_key_to_duplicate_list(t_duplicat_list **list, char *key)
-{
-	t_duplicat_list	*new_node;
-	t_duplicat_list	*cur;
-
-	new_node = malloc(sizeof(t_duplicat_list));
-	if (!new_node)
-		return ;
-	new_node->key = key;
-	new_node->next = NULL;
-	if (!*list)
-	{
-		*list = new_node;
-		return ;
-	}
-	cur = *list;
-	while (cur->next)
-		cur = cur->next;
-	cur->next = new_node;
-}
-
-int	is_duplicate(t_duplicat_list **list, char *key)
-{
-	t_duplicat_list	*tmp;
-	int				n;
-
-	tmp = *list;
-	n = ft_strlen(key);
-	while (tmp)
-	{
-		if (ft_strncmp(tmp->key, key, n))
-			return (1);
-		tmp = tmp->next;
-	}
-	add_key_to_duplicate_list(list, key);
-	return (0);
-}
 
 
 
@@ -56,7 +18,7 @@ int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 {
 	int	len;
 
-	len = ft_strlen(name); // ndiroha 3 mn ba3ed
+	len = ft_strlen(name);
 	if (strncmp(name, line, len))
 	{
 		if (is_duplicate(&cub->duplicate_list, line))
@@ -70,7 +32,6 @@ int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 	return (0);
 }
 
-void	parse_color()
 
 void	parse_all_wall_textures(t_cub *cub, char *line, int i, int *succes)
 {

@@ -1,21 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_parse_utils.c                                   :+:      :+:    :+:   */
+/*   validate_key_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/25 16:45:31 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/25 17:00:27 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/08/26 16:46:36 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/08/26 17:36:19 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int get_path(char *line, int i)
+
+
+void	add_key_to_duplicate_list(t_duplicat_list **list, char *key)
 {
-	int	*sub_path;
-	int	*path;
+	t_duplicat_list	*new_node;
+	t_duplicat_list	*cur;
+
+	new_node = malloc(sizeof(t_duplicat_list));
+	if (!new_node)
+		return ;
+	new_node->key = key;
+	new_node->next = NULL;
+	if (!*list)
+	{
+		*list = new_node;
+		return ;
+	}
+	cur = *list;
+	while (cur->next)
+		cur = cur->next;
+	cur->next = new_node;
+}
+int	is_duplicate(t_duplicat_list **list, char *key)
+{
+	t_duplicat_list	*tmp;
+	int				n;
+
+	tmp = *list;
+	n = ft_strlen(key);
+	while (tmp)
+	{
+		if (ft_strncmp(tmp->key, key, n))
+			return (1);
+		tmp = tmp->next;
+	}
+	add_key_to_duplicate_list(list, key);
+	return (0);
+}
+
+char *get_path(char *line, int i)
+{
+	char	*sub_path;
+	char	*path;
 	int	cp;
 
 	cp = 0;
