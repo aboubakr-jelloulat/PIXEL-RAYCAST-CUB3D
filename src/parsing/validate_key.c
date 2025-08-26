@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:43:39 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:33:28 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/26 19:42:39 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 	int	len;
 
 	len = ft_strlen(name);
-	if (strncmp(name, line, len))
+	if (ft_strncmp(name, line, len) == 0)
 	{
 		if (is_duplicate(&cub->duplicate_list, line))
 		{
