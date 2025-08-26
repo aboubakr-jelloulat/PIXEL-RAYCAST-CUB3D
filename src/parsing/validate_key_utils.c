@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:46:36 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 17:36:19 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/26 20:26:36 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	is_duplicate(t_duplicat_list **list, char *key)
 	n = ft_strlen(key);
 	while (tmp)
 	{
-		if (ft_strncmp(tmp->key, key, n))
+		if (ft_strncmp(tmp->key, key, n + 1) == 0)
 			return (1);
 		tmp = tmp->next;
 	}

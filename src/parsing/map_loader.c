@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:25:11 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/25 20:28:37 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/26 20:20:18 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	parse_game_settings(t_cub *cub, int fd)
 	while (line)
 	{
 		i = skip_spaces(&line);
-		if (configuration_key(cub, line, i, &succes))
+		if (!configuration_key(cub, line, i, &succes))
 		{
 			free(line);
 			break;
