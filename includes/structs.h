@@ -4,6 +4,14 @@
 # include "cub3d.h"
 # include "structs.h"
 
+
+typedef struct s_map
+{
+	char							**addr;
+	int								width;
+	int								height;
+}									t_map;
+
 typedef struct s_texture
 {
 	mlx_texture_t	*mlx_north;
@@ -38,6 +46,7 @@ typedef struct s_cub
 	t_texture		textures;
 	t_duplicat_list	*duplicate_list;
 	t_list_status	list_status;
+	t_map			map;
 }	t_cub;
 
 

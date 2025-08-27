@@ -6,13 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:46:36 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 20:26:36 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:07:29 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
-
 
 void	add_key_to_duplicate_list(t_duplicat_list **list, char *key)
 {
@@ -34,6 +32,7 @@ void	add_key_to_duplicate_list(t_duplicat_list **list, char *key)
 		cur = cur->next;
 	cur->next = new_node;
 }
+
 int	is_duplicate(t_duplicat_list **list, char *key)
 {
 	t_duplicat_list	*tmp;
@@ -51,30 +50,28 @@ int	is_duplicate(t_duplicat_list **list, char *key)
 	return (0);
 }
 
-char *get_path(char *line, int i)
+char	*get_path(char *line, int i)
 {
+	int		cp;
 	char	*sub_path;
-	char	*path;
-	int	cp;
+	char	*return_path;
 
 	cp = 0;
-	while (line[cp + 1] && line[cp + 1] != '\n')
-	{
+	while (line[i + cp] && line[i + cp] != '\n')
 		cp++;
-	}
 	sub_path = ft_substr(line, i, cp);
-	path = ft_strtrim(sub_path, " ");
-	free (sub_path);
-	return (path);
+	return_path = ft_strtrim(sub_path, " ");
+	free(sub_path);
+	return (return_path);
 }
 
-int save_image_path(t_cub *cub, char **path, char *line)
+int	save_image_path(t_cub *cub, char **path, char *line)
 {
 	int	len;
-	int i;
+	int	i;
 
 	i = 0;
-	if (!line || !line[0])
+	if (!line || !line[i])
 		return (0);
 	i = skip_spaces(&line);
 	if (line[i] == 0 || line[i] == '\n')

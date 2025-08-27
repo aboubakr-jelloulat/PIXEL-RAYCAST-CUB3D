@@ -6,13 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:43:39 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:42:39 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:23:45 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
-
 
 int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 {
@@ -21,7 +19,7 @@ int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 	len = ft_strlen(name);
 	if (ft_strncmp(name, line, len) == 0)
 	{
-		if (is_duplicate(&cub->duplicate_list, line))
+		if (is_duplicate(&cub->duplicate_list, name))
 		{
 			cub->list_status.is_duplicate_key = true;
 			return (1);
@@ -32,7 +30,6 @@ int	parse_texture_line(t_cub *cub, char *line, char **path, char *name)
 	return (0);
 }
 
-
 void	parse_all_wall_textures(t_cub *cub, char *line, int i, int *succes)
 {
 	*succes += parse_texture_line(cub, line + i, &cub->no_texture_path, "NO");
@@ -40,6 +37,7 @@ void	parse_all_wall_textures(t_cub *cub, char *line, int i, int *succes)
 	*succes += parse_texture_line(cub, line + i, &cub->we_texture_path, "WE");
 	*succes += parse_texture_line(cub, line + i, &cub->ea_texture_path, "EA");
 }
+
 static bool	is_texture_or_color_key(char *str)
 {
 	if (ft_strncmp("NO ", str, 3) == 0

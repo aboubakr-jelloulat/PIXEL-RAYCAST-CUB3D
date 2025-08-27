@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shutdown_cub.c                                     :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 17:47:17 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 17:48:02 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/08/27 16:29:15 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/08/27 16:31:04 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int	shutdown_cub(t_cub *cub)
+void	close_window_esc(mlx_key_data_t key, void *param)
 {
-	if (cub->mlx)
+	t_cub	*cub;
+
+	cub = (t_cub *)param;
+	if (key.key == MLX_KEY_ESCAPE && key.action == MLX_PRESS)
 		mlx_close_window(cub->mlx);
-	if (cub->image)
-		mlx_delete_image(cub->mlx, cub->image);
-	// Radi nfree Cub + texture + imgaes obezzaf 
-	ft_bzero(cub, sizeof(t_cub));
-	return (0);
 }

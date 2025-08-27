@@ -76,6 +76,8 @@ fclean: clean
 
 re: fclean all
 
+cub : all clean
+
 .PHONY: all clean fclean re
 
 

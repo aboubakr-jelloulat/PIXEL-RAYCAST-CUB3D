@@ -6,12 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:45 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:24:14 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:33:00 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
 
 int	init_window(t_cub *cub)
 {
@@ -34,7 +33,8 @@ int	init_window(t_cub *cub)
 		display_errors(mlx_strerror(mlx_errno));
 		return (EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);
+	mlx_key_hook(cub->mlx, close_window_esc, cub);
+	return (0);
 }
 
 int	load_textures(t_cub *cub)
@@ -43,7 +43,7 @@ int	load_textures(t_cub *cub)
 	cub->textures.mlx_south = mlx_load_png(cub->so_texture_path);
 	cub->textures.mlx_west = mlx_load_png(cub->we_texture_path);
 	cub->textures.mlx_east = mlx_load_png(cub->ea_texture_path);
-	return (EXIT_SUCCESS);
+	return (0);
 }
 
 int	check_textures(t_cub *cub)
@@ -51,10 +51,10 @@ int	check_textures(t_cub *cub)
 	if (!cub->textures.mlx_north || !cub->textures.mlx_south
 		|| !cub->textures.mlx_west || !cub->textures.mlx_east)
 	{
-		display_errors("failed to load wall textures");
+		display_errors("\nfailed to load textures\n");
 		return (EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
 
 int	init_cub(t_cub *cub)
@@ -65,5 +65,5 @@ int	init_cub(t_cub *cub)
 		return (EXIT_FAILURE);
 	if (check_textures(cub) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	return (0);
 }

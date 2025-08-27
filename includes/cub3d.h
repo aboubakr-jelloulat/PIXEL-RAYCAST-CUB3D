@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:09:39 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 15:30:35 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 #define RED "\033[31m"
 #define RESET "\033[0m"
 
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 1900
+# define HEIGHT 1000
 
 
 #endif

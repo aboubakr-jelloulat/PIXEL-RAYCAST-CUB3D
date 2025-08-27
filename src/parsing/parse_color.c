@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 17:38:55 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 17:28:27 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:09:06 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	trim_trailing_spaces(char *str)
 	int	len;
 
 	len = ft_strlen(str);
-	while (len > 0 &&  is_space(str[len - 1]))
+	while (len > 0 && is_space(str[len - 1]))
 	{
 		str[len - 1] = '\0';
 		len--;
@@ -48,7 +48,6 @@ bool	validate_color_syntax(char *str)
 	return (false);
 }
 
-
 int	validate_rgb_components(char **values, int *r, int *g, int *b)
 {
 	if (!values || !values[0] || !values[1] || !values[2] || values[3])
@@ -63,8 +62,6 @@ int	validate_rgb_components(char **values, int *r, int *g, int *b)
 		return (0);
 	return (1);
 }
-
-
 
 int	parse_color_value(char *line, int *out_color)
 {
@@ -88,7 +85,6 @@ int	parse_color_value(char *line, int *out_color)
 	return (1);
 }
 
-
 void	parse_colors(t_cub *cub, char *line, int i, int *succes)
 {
 	char	*id;
@@ -109,4 +105,3 @@ void	parse_colors(t_cub *cub, char *line, int i, int *succes)
 			(*succes)++;
 	}
 }
-

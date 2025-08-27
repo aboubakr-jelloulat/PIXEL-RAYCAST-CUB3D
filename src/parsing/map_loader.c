@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:25:11 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 20:20:18 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 16:01:01 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,13 @@ int	parse_game_settings(t_cub *cub, int fd)
 		if (!configuration_key(cub, line, i, &succes))
 		{
 			free(line);
-			break;
+			break ;
 		}
 		free(line);
 		if (succes == 6)
-			break;
+			break ;
 		line = get_next_line(fd);
 	}
-	if (!line)
 	delete_duplicate_list(cub->duplicate_list);
 	cub->duplicate_list = NULL;
 	return (validate_textures_and_colors(cub));

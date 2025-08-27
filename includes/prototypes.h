@@ -36,11 +36,7 @@ bool	is_valid_numbers(char *str);
 
 /*  Validate   Color 	*/
 
-bool	validate_all_textures(t_cub *cub);
-bool	validate_floor_color(t_cub *cub);
-bool	validate_ceiling_color(t_cub *cub);
-bool	validate_no_duplicates(t_cub *cub);
-bool	validate_texture_extensions(t_cub *cub);
+int	validate_textures_and_colors(t_cub *cub);
 
 /*		PARSING  MAP */
 
@@ -64,6 +60,16 @@ bool	is_space(char c);
 /*		Free		*/
 
 void	free_rbg_values(char **value);
+void	gc_collect(t_cub *cub);
+void	delete_duplicate_list(t_duplicat_list *list);
+
+
+
+
+/*	Exec  hooks 		*/
+
+
+void	close_window_esc(mlx_key_data_t key, void *param);
 
 
 #endif
