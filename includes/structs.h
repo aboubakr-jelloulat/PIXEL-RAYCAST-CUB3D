@@ -7,7 +7,7 @@
 
 typedef struct s_map
 {
-	char							**addr;
+	char							**map;
 	int								width;
 	int								height;
 }									t_map;

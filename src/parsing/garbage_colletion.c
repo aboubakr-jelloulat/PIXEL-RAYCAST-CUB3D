@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   garbage_colletion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:43:05 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:00:24 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 19:23:57 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ static void	delete_map(t_cub *cub)
 {
 	int	i;
 
-	if (!cub || !cub->map.addr)
+	if (!cub || !cub->map.map)
 		return ;
 	i = 0;
 	while (i < cub->map.height)
 	{
-		free(cub->map.addr[i]);
-		cub->map.addr[i] = NULL;
+		free(cub->map.map[i]);
+		cub->map.map[i] = NULL;
 		i++;
 	}
-	free(cub->map.addr);
-	cub->map.addr = NULL;
+	free(cub->map.map);
+	cub->map.map = NULL;
 }
 
 void	gc_collect(t_cub *cub)

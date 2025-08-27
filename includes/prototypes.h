@@ -7,10 +7,12 @@
 
 
 
-int	load_game_engine(int ac, char **av);
+
 int	init_cub(t_cub *cub);
 int	shutdown_cub(t_cub *cub);
 int	parse_game_settings(t_cub *cub, int fd);
+int	load_map_data(t_cub *cub, int ac, char **av);
+void	run_cub(t_cub *cub);
 
 
 /*		handel ex and bascis output		*/
@@ -70,6 +72,14 @@ void	delete_duplicate_list(t_duplicat_list *list);
 
 
 void	close_window_esc(mlx_key_data_t key, void *param);
+
+
+
+
+/*     Randring  / Recast      */
+
+
+
 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 15:59:04 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/27 19:14:43 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,22 @@
 
 int	main(int ac, char **av)
 {
-	return (load_game_engine(ac, av));
+	t_cub	cub;
+
+	ft_bzero(&cub, sizeof(t_cub));
+	if (load_map_data(&cub, ac, av) == 1)
+	{
+		shutdown_cub(&cub);
+		return (1);
+	}
+	// mlx_key_hook(cub->mlx, close_window_esc, cub);
+	// render_game(); // 
+	if (init_cub(&cub) == 1)
+	{
+		shutdown_cub(&cub);
+		return (1);
+	}
+	run_cub(&cub);
+	shutdown_cub(&cub);
+	return (0);
 }

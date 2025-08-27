@@ -35,13 +35,13 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 # Compiler and flags 
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror -ffast-math -O3
+CFLAGS  = -Wall -Wextra -Werror -ffast-math -O3 
 INCLUDES = -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(MLX)
 
 #mlx
 MLX = /Users/${USER}/MLX42
 
-MLX42_DIR = /Users/ajelloul/MLX42
+MLX42_DIR = /Users/${USER}/MLX42
 
 INCLUDES = -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(MLX42_DIR)/include
 
