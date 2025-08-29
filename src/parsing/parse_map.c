@@ -6,11 +6,22 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:20:55 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/29 16:01:48 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:10:34 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d.h"
+char	*skip_empty_lines(int fd)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	while (line && *line == '\n')
+	{
+		free(line);
+		line = get_next_line(fd);
+	}
+	return (line);
+}
 
 void	append_row_to_map(t_map_row **map_row, char *line)
 {
@@ -47,10 +58,10 @@ int	parse_map(t_cub *cub, int fd)
 		append_row_to_map(&map_rows, line);
 		line = get_next_line(fd);
 	}
-	// if (is_map_valid())
-	// {
+	if (is_valid_map() == 1)
+	{
 		
-	// }
+	}
 	(void)cub;
 	return 0;
 }

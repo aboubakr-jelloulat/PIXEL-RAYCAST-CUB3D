@@ -80,7 +80,13 @@ void	close_window_esc(mlx_key_data_t key, void *param);
 
 
 int		parse_map(t_cub *cub, int fd);
-char	*skip_empty_lines(int fd);
+int		is_valid_map_char(char c);
+int		is_wall_or_space(char c);
+int		is_valid_map_char(char c);
+int		is_whitespace(char c);
+int		parse_map(t_cub *cub, int fd);
+int		up_valid(t_map_row *up, int pos);
+int		down_valid(t_map_row *down, int pos);
 
 
 
