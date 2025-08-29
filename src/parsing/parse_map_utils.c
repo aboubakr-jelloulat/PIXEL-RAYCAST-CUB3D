@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/28 11:18:22 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/08/29 15:35:44 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/08/29 15:37:46 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
-int	main(int ac, char **av)
+char	*skip_empty_lines(int fd)
 {
-	t_cub	cub;
+	char	*line;
 
-	ft_bzero(&cub, sizeof(t_cub));
-	if (load_map_data(&cub, ac, av) == 1)
+	line = get_next_line(fd);
+	while (line && *line == '\n')
 	{
-		shutdown_cub(&cub);
-		return (1);
+		free(line);
+		line = get_next_line(fd);
 	}
-
-	
-	// mlx_key_hook(cub->mlx, close_window_esc, cub);
-	// render_game();
-	if (init_cub(&cub) == 1)
-	{
-		shutdown_cub(&cub);
-		return (1);
-	}
-	run_cub(&cub);
-	shutdown_cub(&cub);
-	return (0);
+	return (line);
 }

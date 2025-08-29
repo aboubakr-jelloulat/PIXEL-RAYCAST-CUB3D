@@ -76,9 +76,11 @@ void	close_window_esc(mlx_key_data_t key, void *param);
 
 
 
-/*     Randring  / Recast      */
+/*     Parse Map       */
 
 
+int		parse_map(t_cub *cub, int fd);
+char	*skip_empty_lines(int fd);
 
 
 

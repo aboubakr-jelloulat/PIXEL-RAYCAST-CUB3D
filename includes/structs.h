@@ -5,6 +5,14 @@
 # include "structs.h"
 
 
+typedef struct s_map_row
+{
+    char            *row;
+    int             size;
+    struct s_map_row *up_row;  // previous node (row above)
+    struct s_map_row *down_row; // next node (row below)
+}   t_map_row;
+
 typedef struct s_map
 {
 	char							**map;

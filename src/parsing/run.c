@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 19:27:20 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/08/29 15:19:46 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 		return (1);
 	if (parse_game_settings(cub, fd) == 1)
 		return (1);
-	// valid map boubker
+	if (parse_map(cub, fd) == 1)
+		return (1);
+	close(fd);
 	return (0);
 }
