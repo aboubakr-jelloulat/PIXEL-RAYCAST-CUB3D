@@ -77,9 +77,15 @@ void	close_window_esc(mlx_key_data_t key, void *param);
 
 
 /*     Randring  / Recast      */
+// player
+void    clear_player(t_cub *cub);
+void	draw_player(t_cub *cub);
+void    key_handler(mlx_key_data_t key, void *param);
 
-
-
+// drawing
+void	draw_square(t_cub *cub, int x, int y, int w, int h, int color);
+void    draw_celling_and_ground(t_cub *cub);
+void	draw_map(t_cub *cub);
 
 
 #endif

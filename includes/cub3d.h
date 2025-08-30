@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 19:24:23 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:47:51 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@
 #define RED "\033[31m"
 #define RESET "\033[0m"
 
-# define WIDTH 1900
-# define HEIGHT 1000
+# define WIDTH 16 * 64
+# define HEIGHT 10 * 64
+# define p_x WIDTH / 2 - 16
+# define p_y HEIGHT / 2 - 16
 
 
 #endif

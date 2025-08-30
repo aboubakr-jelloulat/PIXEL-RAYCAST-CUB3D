@@ -4,6 +4,11 @@
 # include "cub3d.h"
 # include "structs.h"
 
+typedef	struct	s_player
+{
+	int	x;
+	int	y;
+}	t_player;
 
 typedef struct s_map
 {
@@ -46,6 +51,7 @@ typedef struct s_cub
 	t_texture		textures;
 	t_duplicat_list	*duplicate_list;
 	t_list_status	list_status;
+	t_player		player;
 	t_map			map;
 }	t_cub;
 
