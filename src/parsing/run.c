@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/29 15:19:46 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:55:00 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf(RED "\nInvalid arguments => Usage: ./cub3D/maps[map.cub]\n" RESET);
+		display_errors("Invalid arguments => Usage: ./cub3D/maps[map.cub]\n");
 		return (1);
 	}
 	fd = open_map_file(av[1]);

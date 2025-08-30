@@ -6,11 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 19:45:22 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:40:25 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CUB3D_H
+#ifndef CUB3D_H
 # define CUB3D_H
 
 # include "/Users/ajelloul/MLX42/include/MLX42/MLX42.h"
@@ -27,11 +27,10 @@
 # include "prototypes.h"
 # include "structs.h"
 
-#define RED "\033[31m"
-#define RESET "\033[0m"
+# define RED "\033[31m"
+# define RESET "\033[0m"
 
 # define WIDTH 1900
 # define HEIGHT 1000
-
 
 #endif

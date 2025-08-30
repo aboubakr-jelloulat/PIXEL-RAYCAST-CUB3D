@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:19:49 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:32:27 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:32:22 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	skip_spaces(char **line)
 
 void	display_errors(const char *error_msg)
 {
-	printf("\033[31m %s \033[0m\n", error_msg);
+	printf(RED "\nError\n \t=> %s \033[0m\n", error_msg);
 }
 
 bool	is_space(char c)

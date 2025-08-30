@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:25:11 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:01:01 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:26:23 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	valid_file_extension(char *filename)
 	len = ft_strlen(filename);
 	if (len < 4 || ft_strncmp(filename + len - 4, ".cub", 4))
 	{
-		printf(RED "\nError: file must be a [.cub]\n\n" RESET);
+		display_errors(RED "file must be a [.cub]\n" RESET);
 		return (1);
 	}
 	return (0); 
@@ -32,7 +32,7 @@ int	open_map_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		perror(RED "\nError opening file ");
+		display_errors(RED "opening file ");
 		printf("\n");
 		return (-1);
 	}

@@ -6,12 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:09:42 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/29 18:03:33 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 12:33:10 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
 
 int	is_whitespace(char c)
 {
@@ -20,15 +19,16 @@ int	is_whitespace(char c)
 
 int	is_wall_or_space(char c)
 {
-	return (c == '1' || ft_is_whitespace(c));
+	return (c == '1' || is_whitespace(c));
 }
 
 int	is_valid_map_char(char c)
 {
 	return (c == '1' || c == '0' || c == '2' 
 		|| c == 'N' || c == 'S' || c == 'W' || c == 'E' 
-		|| ft_is_whitespace(c));
+		|| is_whitespace(c));
 }
+
 int	up_valid(t_map_row *up, int pos)
 {
 	if (up == NULL)
