@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:06:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/29 18:05:34 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/30 11:07:11 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ static int	validate_map_position(t_map_row *row, int pos)
 	return (EXIT_SUCCESS);
 }
 
+
+
 int is_valid_map(t_map_row *map_row)
 {
 	t_map_row	*cur_row;
@@ -70,6 +72,5 @@ int is_valid_map(t_map_row *map_row)
 		}
 		cur_row = cur_row->down_row;
 	}
-	return  // Hej validi player
+	return  
 }
-
