@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:43:47 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:43:48 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 08:47:17 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		parse_game_settings(t_cub *cub, int fd);
 int		load_map_data(t_cub *cub, int ac, char **av);
 void	run_cub(t_cub *cub);
 
-/*		handel ex and bascis output		*/
+/*		handel bascis output		*/
 
 int		valid_file_extension(char *filename);
 int		open_map_file(char *filename);
@@ -45,13 +45,6 @@ bool	is_valid_numbers(char *str);
 /*  Validate   Color 	*/
 
 int		validate_textures_and_colors(t_cub *cub);
-
-/*		PARSING  MAP */
-
-int		skip_spaces(char **line);
-bool	validate_ceiling_color(t_cub *cub);
-bool	validate_no_duplicates(t_cub *cub);
-bool	validate_texture_extensions(t_cub *cub);
 
 /*		Errors	 */
 
@@ -81,5 +74,6 @@ int		is_whitespace(char c);
 int		up_valid(t_map_row *up, int pos);
 int		down_valid(t_map_row *down, int pos);
 int		is_valid_map(t_map_row *map_row);
+int		skip_spaces(char **line);
 
 #endif

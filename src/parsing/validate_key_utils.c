@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:46:36 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:07:29 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:05:36 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	add_key_to_duplicate_list(t_duplicat_list **list, char *key)
 	cur->next = new_node;
 }
 
+/* use n+1 to also compare '\0' avoids matching "NO" with "NORTH" */
 int	is_duplicate(t_duplicat_list **list, char *key)
 {
 	t_duplicat_list	*tmp;

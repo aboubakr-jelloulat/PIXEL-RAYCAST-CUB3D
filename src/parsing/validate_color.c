@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:04:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:29:46 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:51:43 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	validate_all_textures(t_cub *cub)
 
 int	validate_textures_and_colors(t_cub *cub)
 {
+	if (!validate_all_textures(cub))
+		return (1);
 	if (cub->list_status.is_duplicate_key)
 	{
 		display_errors("Configuration Error: Duplicate components detected\n");
@@ -48,11 +50,9 @@ int	validate_textures_and_colors(t_cub *cub)
 	}
 	if (cub->list_status.is_wrong_txtr_extension)
 	{
-		display_errors("Color Error: Floor color is missing or invalid\n");
+		display_errors("Wrong texture extension :  texture must be a [.png]\n");
 		return (1);
 	}
-	if (!validate_all_textures(cub))
-		return (1);
 	if (!cub->list_status.floor_color)
 	{
 		display_errors("Missing or invalid floor color");
