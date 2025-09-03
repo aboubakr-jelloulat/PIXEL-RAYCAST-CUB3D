@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:24:49 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/03 22:30:25 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 	if (parse_map(cub, fd) == 1)
 		return (1);
 	close(fd);
+	if (validate_and_set_player(cub) == 1)
+		return (1);
 	return (0);
 }
