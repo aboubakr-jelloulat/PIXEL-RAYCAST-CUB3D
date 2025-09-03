@@ -6,11 +6,45 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:06:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:54:47 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/03 22:25:15 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+/*
+
+	 Cases:
+	
+	 1) (!is_wall_or_space(row->row[i]) && row->row[i + 1] == '\0')
+	    Current is an open tile, and the next is end of string.
+	    Example: "11110"
+	                    ^ last '0' touches the void.
+	
+	 2) (!is_wall_or_space(row->row[i]) && is_whitespace(row->row[i + 1]))
+	    Current is an open tile, and the right side is a space.
+	    Example: "1100 1"
+	                      ^ this '0' touches a space.
+	
+	 3) (is_whitespace(row->row[i]) && !is_wall_or_space(row->row[i + 1]))
+	    Current is a space, and the right side is an open tile.
+	    Example: "11 011"
+	                       ^ this '0' touches a space on the left.
+	
+	 4) (!is_wall_or_space(row->row[i]) && !up_valid(up, i))
+	    Current is an open tile, and the row above has a space/void.
+	    Example:
+	       Up:  "111 11"
+	       Row: "110011"
+	                 ^ this '0' touches a void above.
+	
+	 5) (!is_wall_or_space(row->row[i]) && !down_valid(down, i))
+	    Current is an open tile, and the row below has a space/void.
+	    Example:
+	       Row:  "110011"
+	       Down: "111 11"
+	                 ^ this '0' touches a void below.
+*/
 
 int	is_tile_enclosed(t_map_row *row, int i, t_map_row *up, t_map_row *down)
 {
@@ -41,7 +75,7 @@ static int	validate_map_position(t_map_row *row, int pos)
 		return (EXIT_SUCCESS);
 	if (is_tile_enclosed(row, pos, up, down))
 	{
-		display_errors("Invalid Map Found ");
+		display_errors("validate_map_position : Invalid Map Found ");
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
@@ -68,7 +102,7 @@ int	player_validator(t_map_row *map_row)
 		while (cur_row->row[i])
 		{
 			if (cur_row->row[i] == 'N' || cur_row->row[i] == 'E'
-				|| cur_row->row[i] == 'S' || cur_row->row[i] == 'w')
+				|| cur_row->row[i] == 'S' || cur_row->row[i] == 'W')
 			{
 				plyr_count++;
 				if (plyr_count > 1 || !is_player_spawn_safe(cur_row, i))

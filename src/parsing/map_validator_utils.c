@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:09:42 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:33:10 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/03 21:51:09 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	is_wall_or_space(char c)
 
 int	is_valid_map_char(char c)
 {
-	return (c == '1' || c == '0' || c == '2' 
-		|| c == 'N' || c == 'S' || c == 'W' || c == 'E' 
+	return (c == '1' || c == '0'
+		|| c == 'N' || c == 'S' || c == 'W' || c == 'E'
 		|| is_whitespace(c));
 }
 

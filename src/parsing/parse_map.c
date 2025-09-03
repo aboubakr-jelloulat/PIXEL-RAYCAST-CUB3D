@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:20:55 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:52:50 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/03 22:18:53 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void	append_row_to_map(t_map_row **map_row, char *line)
 	new_node->up_row = tmp;
 }
 
-int	allocate_map_rows(t_cub *cub, t_map_row *first_row, 
+int	allocate_map_rows(t_cub *cub, t_map_row *cur_row, 
 		int max_width, int total_rows)
 {
 	int			current_index;
 	t_map_row	*current_row;
 
 	current_index = 0;
-	current_row = first_row;
+	current_row = cur_row;
 	cub->map.height = total_rows;
 	cub->map.width = max_width;
 	cub->map.map = malloc(sizeof(char *) * total_rows);
@@ -75,7 +75,7 @@ int	allocate_map_rows(t_cub *cub, t_map_row *first_row,
 	return (EXIT_SUCCESS);
 }
 
-int	init_map_from_rows(t_cub *cub, t_map_row *first_row)
+int	init_map_from_rows(t_cub *cub, t_map_row *cur_row)
 {
 	int			max_width;
 	int			total_rows;
@@ -83,7 +83,7 @@ int	init_map_from_rows(t_cub *cub, t_map_row *first_row)
 
 	max_width = 0;
 	total_rows = 0;
-	current_row = first_row;
+	current_row = cur_row;
 	while (current_row)
 	{
 		if (current_row->size > max_width)
@@ -91,7 +91,7 @@ int	init_map_from_rows(t_cub *cub, t_map_row *first_row)
 		total_rows++;
 		current_row = current_row->down_row;
 	}
-	return (allocate_map_rows(cub, first_row, max_width, total_rows));
+	return (allocate_map_rows(cub, cur_row, max_width, total_rows));
 }
 
 int	parse_map(t_cub *cub, int fd)
