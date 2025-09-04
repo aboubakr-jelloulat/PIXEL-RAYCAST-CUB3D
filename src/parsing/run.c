@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 19:54:20 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 20:00:58 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,5 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 	close(fd);
 	if (validate_and_set_player(cub) == 1)
 		return (1);
-	debug(cub);
 	return (0);
 }
