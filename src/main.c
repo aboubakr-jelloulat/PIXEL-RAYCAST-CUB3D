@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 19:38:38 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:55:13 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	init_game(t_cub *cub)
 	cub->player.rotation_speed = 3 * (PI / 180);
 	cub->player.turn_direction = 0;
 	cub->player.walk_direction = 0;
-	cub->map.map = get_map(cub);
+	//cub->map.map = get_map(cub);
 	cub->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
 	cub->image = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
 	return (0);
