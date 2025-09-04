@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 16:29:15 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/01 17:00:16 by ael-krai         ###   ########.fr       */
+/*   Created: 2025/08/28 18:59:25 by ael-krai          #+#    #+#             */
+/*   Updated: 2025/09/01 17:31:20 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void	close_window_esc(mlx_key_data_t key, void *param)
-{
-	t_cub	*cub;
+// void    clear_player(t_cub *cub)
+// {
+// 	draw_square(cub, cub->player.x + 16, cub->player.y + 16, 32, 32, 0x00000000);
+// }
 
-	cub = (t_cub *)param;
-	if (key.key == MLX_KEY_ESCAPE && key.action == MLX_PRESS)
-		mlx_close_window(cub->mlx);
-}
-
-
+// void	draw_player(t_cub *cub)
+// {
+// 	draw_square(cub, x, y, 16, 16, 0xFFFFFFFF);
+// }

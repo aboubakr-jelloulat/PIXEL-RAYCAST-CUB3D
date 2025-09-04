@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 19:27:16 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/28 11:40:58 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int	shutdown_cub(t_cub *cub)
 	return (0);
 }
 
-void	run_cub(t_cub *cub)
-{
-	mlx_loop(cub->mlx);
-}
+// void	run_cub(t_cub *cub)
+// {
+// 	mlx_loop(cub->mlx);
+// }
 
 int	load_map_data(t_cub *cub, int ac, char **av)
 {

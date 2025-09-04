@@ -16,12 +16,6 @@
 # include "cub3d.h"
 # include "structs.h"
 
-typedef struct s_player
-{
-	int		x;
-	int		y;
-	double	radius;;
-}	t_player;
 
 typedef struct s_map_row
 {
@@ -30,6 +24,21 @@ typedef struct s_map_row
 	struct s_map_row	*up_row;
 	struct s_map_row	*down_row;
 }	t_map_row;
+
+typedef	struct	s_player
+{
+	int	x;
+	int	y;
+	int	i;
+	int	j;
+	float	radius;
+	int		turn_direction;
+	int		walk_direction;
+	float	rotation_angle;
+	float	move_speed;
+	float	rotation_speed;
+}	t_player;
+
 
 typedef struct s_map
 {
@@ -72,6 +81,7 @@ typedef struct s_cub
 	t_texture		textures;
 	t_duplicat_list	*duplicate_list;
 	t_list_status	list_status;
+	t_player		player;
 	t_map			map;
 	t_player		player;
 }	t_cub;

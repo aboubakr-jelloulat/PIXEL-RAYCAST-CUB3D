@@ -3,39 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   init_cub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:45 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:33:00 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/08/28 11:27:41 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int	init_window(t_cub *cub)
-{
-	cub->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
-	if (!(cub->mlx))
-	{
-		display_errors(mlx_strerror(mlx_errno));
-		return (EXIT_FAILURE);
-	}
-	cub->image = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
-	if (!(cub->image))
-	{
-		mlx_close_window(cub->mlx);
-		display_errors(mlx_strerror(mlx_errno));
-		return (EXIT_FAILURE);
-	}
-	if (mlx_image_to_window(cub->mlx, cub->image, 0, 0) == -1)
-	{
-		mlx_close_window(cub->mlx);
-		display_errors(mlx_strerror(mlx_errno));
-		return (EXIT_FAILURE);
-	}
-	mlx_key_hook(cub->mlx, close_window_esc, cub);
-	return (0);
-}
+// int	init_window(t_cub *cub)
+// {
+// 	cub->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
+// 	if (!(cub->mlx))
+// 	{
+// 		display_errors(mlx_strerror(mlx_errno));
+// 		return (EXIT_FAILURE);
+// 	}
+// 	cub->image = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
+// 	if (!(cub->image))
+// 	{
+// 		mlx_close_window(cub->mlx);
+// 		display_errors(mlx_strerror(mlx_errno));
+// 		return (EXIT_FAILURE);
+// 	}
+// 	if (mlx_image_to_window(cub->mlx, cub->image, 0, 0) == -1)
+// 	{
+// 		mlx_close_window(cub->mlx);
+// 		display_errors(mlx_strerror(mlx_errno));
+// 		return (EXIT_FAILURE);
+// 	}
+// 	mlx_key_hook(cub->mlx, close_window_esc, cub);
+// 	return (0);
+// }
 
 int	load_textures(t_cub *cub)
 {
@@ -59,8 +59,8 @@ int	check_textures(t_cub *cub)
 
 int	init_cub(t_cub *cub)
 {
-	if (init_window(cub) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
+	// if (init_window(cub) == EXIT_FAILURE)
+	// 	return (EXIT_FAILURE);
 	if (load_textures(cub) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	if (check_textures(cub) == EXIT_FAILURE)

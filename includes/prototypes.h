@@ -80,5 +80,19 @@ int		skip_spaces(char **line);
 
 int		validate_and_set_player(t_cub *cub);
 void	set_player(t_cub *cub, int x, int y, int angle);
+/*     Randring  / Recast      */
+// player
+void    clear_player(t_cub *cub);
+void	draw_player(t_cub *cub);
+
+// hooks
+void    key_handler(mlx_key_data_t key, void *param);
+void	render_player(void *param);
+
+// drawing
+void	draw_square(t_cub *cub, int x, int y, int w, int h, int color);
+void    draw_celling_and_ground(t_cub *cub);
+void	draw_map(t_cub *cub);
+
 
 #endif
