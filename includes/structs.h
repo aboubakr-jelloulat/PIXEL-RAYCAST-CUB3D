@@ -8,6 +8,14 @@ typedef	struct	s_player
 {
 	int	x;
 	int	y;
+	int	i;
+	int	j;
+	float	radius;
+	int		turn_direction;
+	int		walk_direction;
+	float	rotation_angle;
+	float	move_speed;
+	float	rotation_speed;
 }	t_player;
 
 typedef struct s_map

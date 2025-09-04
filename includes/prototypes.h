@@ -80,7 +80,10 @@ void	close_window_esc(mlx_key_data_t key, void *param);
 // player
 void    clear_player(t_cub *cub);
 void	draw_player(t_cub *cub);
+
+// hooks
 void    key_handler(mlx_key_data_t key, void *param);
+void	render_player(void *param);
 
 // drawing
 void	draw_square(t_cub *cub, int x, int y, int w, int h, int color);

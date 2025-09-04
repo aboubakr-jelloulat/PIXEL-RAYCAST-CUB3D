@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:29:15 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:31:04 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/01 17:00:16 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,5 @@ void	close_window_esc(mlx_key_data_t key, void *param)
 	if (key.key == MLX_KEY_ESCAPE && key.action == MLX_PRESS)
 		mlx_close_window(cub->mlx);
 }
+
+

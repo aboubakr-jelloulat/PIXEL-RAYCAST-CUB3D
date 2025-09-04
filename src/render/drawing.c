@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 19:03:49 by ael-krai          #+#    #+#             */
-/*   Updated: 2025/08/29 20:51:34 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/01 19:17:52 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void draw_square(t_cub *cub, int x, int y, int w, int h, int color)
 	}
 }
 
-
 void    draw_celling_and_ground(t_cub *cub)
 {
 	draw_square(cub, 0, 0, WIDTH, HEIGHT / 2, 0x00FFFFFF);
@@ -38,24 +37,24 @@ void    draw_celling_and_ground(t_cub *cub)
 
 void	draw_map(t_cub *cub)
 {
+	char	**map;
 	int	i;
 	int	j;
 
 	i = 0;
-	while (cub->map.map[i])
+	map = cub->map.map;
+	while (map[i])
 	{
 		j = 0;
-		while (cub->map.map[i][j])
+		while (map[i][j])
 		{
-			if (cub->map.map[i][j] == '1')
-				draw_square(cub, j * 64, i * 64, 64, 64, 0x0000FFFF);
-			if (cub->map.map[i][j] == 'E' || cub->map.map[i][j] == 'W'
-				|| cub->map.map[i][j] == 'S' || cub->map.map[i][j] == 'N')
-				{
-					cub->player.x = j;
-					cub->player.y = i;
-					draw_player(cub);
-				}
+			if (map[i][j] == '1')
+				draw_square(cub, j * tile_w, i * tile_h, tile_w, tile_h, 0x0000FFFF);
+			if (map[i][j] == 'E' || map[i][j] == 'W' || map[i][j] == 'S' || map[i][j] == 'N')
+			{
+				cub->player.x = j * tile_w + 48;
+				cub->player.y = i * tile_h + 48;
+			}
 			j++;
 		}
 		i++;
