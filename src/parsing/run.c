@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 18:20:15 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:27:16 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	debug(t_cub *cub)
 		(cub->list_status.ceiling_color >> 8) & 0xFF,
 		cub->list_status.ceiling_color & 0xFF);
 	printf("Player position: x=%d, y=%d, angle=%.2f\n", 
-		cub->player.x, cub->player.y, cub->player.angle);
+		cub->player.x, cub->player.y, cub->player.radius);
 }
 
 int	shutdown_cub(t_cub *cub)

@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 22:46:27 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 18:16:35 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:26:38 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	set_player(t_cub *cub, int x, int y, int angle)
 {
 	cub->player.x = x;
 	cub->player.y = y;
-	cub->player.angle = deg_to_rad(angle);
+	cub->player.radius = deg_to_rad(angle);
 }

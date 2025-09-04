@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 17:55:50 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:26:14 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_player
 {
 	int		x;
 	int		y;
-	double	angle;
+	double	radius;;
 }	t_player;
 
 typedef struct s_map_row
