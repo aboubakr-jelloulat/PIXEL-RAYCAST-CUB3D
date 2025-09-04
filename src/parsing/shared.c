@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:19:49 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/26 19:32:27 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:54:25 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ bool	is_valid_numbers(char *str)
 	return (true);
 }
 
+/*
+	If it finds a newline character '\n' it replaces it with '\0'
+	
+	removes the trailing newline from lines you read with get_next_line
+
+	str = "220,100,0\n"
+	
+	str = "220,100,0"
+*/
 void	trim_newline(char *str)
 {
 	int	i;
@@ -58,7 +67,7 @@ int	skip_spaces(char **line)
 
 void	display_errors(const char *error_msg)
 {
-	printf("\033[31m %s \033[0m\n", error_msg);
+	printf(RED "\nError\n \t=> %s \033[0m\n", error_msg);
 }
 
 bool	is_space(char c)

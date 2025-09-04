@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 19:24:23 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:50:55 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CUB3D_H
+#ifndef CUB3D_H
 # define CUB3D_H
 
-# include "/Users/ael-krai/MLX42/include/MLX42/MLX42.h"
+# include "/Users/ajelloul/MLX42/include/MLX42/MLX42.h"
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -27,11 +27,12 @@
 # include "prototypes.h"
 # include "structs.h"
 
-#define RED "\033[31m"
-#define RESET "\033[0m"
+# define RED "\033[31m"
+# define RESET "\033[0m"
 
 # define WIDTH 1900
 # define HEIGHT 1000
 
+# define TILE_SIZE 64
 
 #endif

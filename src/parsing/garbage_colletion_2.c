@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   garbage_colletion_2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:25:06 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/08/30 11:47:35 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/08/30 11:49:21 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
-int	main(int ac, char **av)
+void	delete_map_rows(t_map_row *map_row)
 {
-	t_cub	cub;
+	t_map_row	*tmp;
 
-	ft_bzero(&cub, sizeof(t_cub));
-	if (load_map_data(&cub, ac, av) == 1)
+	while (map_row)
 	{
-		shutdown_cub(&cub);
-		return (1);
+		tmp = map_row;
+		map_row = map_row->down_row;
+		free(tmp->row);
+		free(tmp);
+		tmp = NULL;
 	}
-	if (init_cub(&cub) == 1)
-	{
-		shutdown_cub(&cub);
-		return (1);
-	}
-	run_cub(&cub);
-	shutdown_cub(&cub);
-	return (0);
 }

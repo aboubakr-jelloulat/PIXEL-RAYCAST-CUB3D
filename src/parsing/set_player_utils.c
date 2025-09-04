@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   set_player_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:25:06 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/09/03 22:46:27 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/09/04 19:26:38 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
-int	main(int ac, char **av)
+double	deg_to_rad(double degrees)
 {
-	t_cub	cub;
+	return (degrees * (M_PI / 180.0));
+}
 
-	ft_bzero(&cub, sizeof(t_cub));
-	if (load_map_data(&cub, ac, av) == 1)
-	{
-		shutdown_cub(&cub);
-		return (1);
-	}
-	if (init_cub(&cub) == 1)
-	{
-		shutdown_cub(&cub);
-		return (1);
-	}
-	run_cub(&cub);
-	shutdown_cub(&cub);
-	return (0);
+/*
+		* TILE_SIZE + TILE_SIZE / 2
+		* TILE_SIZE + TILE_SIZE / 2
+*/
+
+void	set_player(t_cub *cub, int x, int y, int angle)
+{
+	cub->player.x = x;
+	cub->player.y = y;
+	cub->player.radius = deg_to_rad(angle);
 }

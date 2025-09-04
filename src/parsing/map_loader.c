@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:25:11 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:01:01 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 09:52:18 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,23 @@
 
 int	valid_file_extension(char *filename)
 {
-	int	len;
+	int		len;
+	char	*last_slash;
+	char	*basename;
 
+	if (!filename)
+		return (display_errors(RED "Invalid filename\n" RESET), 1);
 	len = ft_strlen(filename);
-	if (len < 4 || ft_strncmp(filename + len - 4, ".cub", 4))
-	{
-		printf(RED "\nError: file must be a [.cub]\n\n" RESET);
-		return (1);
-	}
-	return (0); 
+	if (ft_strncmp(filename + len - 4, ".cub", 4) != 0)
+		return (display_errors(RED "file must be a [.cub]\n" RESET), 1);
+	last_slash = ft_strrchr(filename, '/');
+	if (last_slash)
+		basename = last_slash + 1;
+	else
+		basename = filename;
+	if (ft_strncmp(basename, ".cub", 4) == 0)
+		return (display_errors(RED "filename cannot be just '.cub'\n" RESET), 1);
+	return (0);
 }
 
 int	open_map_file(char *filename)
@@ -32,8 +40,7 @@ int	open_map_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		perror(RED "\nError opening file ");
-		printf("\n");
+		display_errors(RED "Can't open This file\n" RESET);
 		return (-1);
 	}
 	return (fd);
