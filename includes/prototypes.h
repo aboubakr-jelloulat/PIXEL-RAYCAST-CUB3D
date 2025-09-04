@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:43:47 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:52:33 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:54:39 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,5 @@ int		skip_spaces(char **line);
 
 int		validate_and_set_player(t_cub *cub);
 void	set_player(t_cub *cub, int x, int y, int angle);
-
-
 
 #endif

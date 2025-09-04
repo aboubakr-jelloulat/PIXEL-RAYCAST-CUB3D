@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 22:28:04 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:53:33 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:55:12 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,9 @@ int	find_player_start(t_cub *cub)
 		y++;
 	}
 	return (EXIT_FAILURE);
-	
 }
 
-int validate_and_set_player(t_cub *cub)
+int	validate_and_set_player(t_cub *cub)
 {
 	if (find_player_start(cub) == EXIT_FAILURE)
 		return (EXIT_FAILURE);

@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/30 12:43:08 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:55:50 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include "cub3d.h"
 # include "structs.h"
+
+typedef struct s_player
+{
+	int		x;
+	int		y;
+	double	angle;
+}	t_player;
 
 typedef struct s_map_row
 {
@@ -66,6 +73,7 @@ typedef struct s_cub
 	t_duplicat_list	*duplicate_list;
 	t_list_status	list_status;
 	t_map			map;
+	t_player		player;
 }	t_cub;
 
 #endif

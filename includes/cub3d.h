@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:43:00 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:50:55 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@
 
 # define WIDTH 1900
 # define HEIGHT 1000
+
+# define TILE_SIZE 64
 
 #endif
