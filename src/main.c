@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
 /*   Updated: 2025/09/01 20:52:04 by ael-krai         ###   ########.fr       */
@@ -47,6 +47,7 @@ int	main(int ac, char **av)
 	t_cub		cub;
 
 	ft_bzero(&cub, sizeof(t_cub));
+
 	if (load_map_data(&cub, ac, av) == 1 || init_cub(&cub) == 1)
 		return (shutdown_cub(&cub), 1);
 	init_game(&cub);

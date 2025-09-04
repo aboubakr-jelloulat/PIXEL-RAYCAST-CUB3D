@@ -6,11 +6,17 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 17:38:55 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/08/27 16:09:06 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:42:37 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+/*
+	Removes all spaces/tabs at the end of the string by replacing them with '\0'
+		Input:  "  220,100,0     "
+		After trim spaces: "  220,100,0"
+*/
 
 void	trim_trailing_spaces(char *str)
 {
@@ -23,6 +29,12 @@ void	trim_trailing_spaces(char *str)
 		len--;
 	}
 }
+
+/*  cases:
+1. Invalid characters →  "220;100,a0" (';' not allowed and a)
+2. Space before comma → "220 ,100,0"
+3. Wrong comma count → "220,100" (1 comma) or "220,100,0,50" (3 commas)
+*/
 
 bool	validate_color_syntax(char *str)
 {
@@ -48,6 +60,9 @@ bool	validate_color_syntax(char *str)
 	return (false);
 }
 
+/*
+	values[3] must not exist => no extra values
+*/
 int	validate_rgb_components(char **values, int *r, int *g, int *b)
 {
 	if (!values || !values[0] || !values[1] || !values[2] || values[3])
@@ -63,6 +78,9 @@ int	validate_rgb_components(char **values, int *r, int *g, int *b)
 	return (1);
 }
 
+/*
+	" 50, 50, 50"   => "50, 50, 50"
+*/
 int	parse_color_value(char *line, int *out_color)
 {
 	int		r;

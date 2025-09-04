@@ -1,8 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   structs.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/09/04 19:26:14 by ajelloul         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
 # include "cub3d.h"
 # include "structs.h"
+
+
+typedef struct s_map_row
+{
+	char				*row;
+	int					size;
+	struct s_map_row	*up_row;
+	struct s_map_row	*down_row;
+}	t_map_row;
 
 typedef	struct	s_player
 {
@@ -18,12 +39,13 @@ typedef	struct	s_player
 	float	rotation_speed;
 }	t_player;
 
+
 typedef struct s_map
 {
-	char							**map;
-	int								width;
-	int								height;
-}									t_map;
+	char	**map;
+	int		width;
+	int		height;
+}	t_map;
 
 typedef struct s_texture
 {
@@ -61,7 +83,7 @@ typedef struct s_cub
 	t_list_status	list_status;
 	t_player		player;
 	t_map			map;
+	t_player		player;
 }	t_cub;
-
 
 #endif
