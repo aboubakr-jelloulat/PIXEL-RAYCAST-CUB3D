@@ -6,11 +6,36 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/03 22:30:25 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/04 18:20:15 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+void	debug(t_cub *cub)
+{
+	int	i;
+
+	printf("Map height: %d\n", cub->map.height);
+	printf("Map width: %d\n", cub->map.width);
+	i = -1;
+	while (++i < cub->map.height)
+		printf("[%s]\n", cub->map.map[i]);
+	printf("NO: %s\n", cub->no_texture_path);
+	printf("SO: %s\n", cub->so_texture_path);
+	printf("WE: %s\n", cub->we_texture_path);
+	printf("EA: %s\n", cub->ea_texture_path);
+	printf("F: %d, in rgb r: %d, g: %d, b: %d\n", cub->list_status.floor_color,
+		(cub->list_status.floor_color >> 16) & 0xFF,
+		(cub->list_status.floor_color >> 8) & 0xFF,
+		cub->list_status.floor_color & 0xFF);
+	printf("C: %d, in rgb r: %d, g: %d, b: %d\n", cub->list_status.ceiling_color,
+		(cub->list_status.ceiling_color >> 16) & 0xFF,
+		(cub->list_status.ceiling_color >> 8) & 0xFF,
+		cub->list_status.ceiling_color & 0xFF);
+	printf("Player position: x=%d, y=%d, angle=%.2f\n", 
+		cub->player.x, cub->player.y, cub->player.angle);
+}
 
 int	shutdown_cub(t_cub *cub)
 {
