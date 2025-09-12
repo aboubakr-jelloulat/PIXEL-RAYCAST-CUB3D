@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 19:37:52 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/12 11:24:57 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "cub3d.h"
 # include "structs.h"
 
-
 typedef struct s_map_row
 {
 	char				*row;
@@ -25,19 +24,19 @@ typedef struct s_map_row
 	struct s_map_row	*down_row;
 }	t_map_row;
 
-typedef	struct	s_player
+typedef struct s_player
 {
-	int	x;
-	int	y;
-	int	i;
-	int	j;
-	float	radius;
-	int		turn_direction;
-	int		walk_direction;
-	float	rotation_angle;
-	float	move_speed;
-	float	rotation_speed;
-}	t_player;
+    int		x;
+    int		y;
+    float	angle;
+    float	radius; // bob
+    bool	key_up;
+    bool	key_down;
+    bool	key_left;
+    bool	key_right;
+    bool	left_rotate;
+    bool	right_rotate;
+}   t_player;
 
 
 typedef struct s_map
@@ -72,16 +71,16 @@ typedef struct s_duplicat_list
 
 typedef struct s_cub
 {
-	mlx_t			*mlx;
-	mlx_image_t		*image;
 	char			*no_texture_path;
 	char			*so_texture_path;
 	char			*we_texture_path;
 	char			*ea_texture_path;
-	t_texture		textures;
 	t_duplicat_list	*duplicate_list;
 	t_list_status	list_status;
+	t_texture		textures;
+	mlx_image_t		*image;
 	t_player		player;
+	mlx_t			*mlx;
 	t_map			map;
 }	t_cub;
 

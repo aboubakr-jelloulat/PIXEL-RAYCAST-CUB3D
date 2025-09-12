@@ -39,15 +39,25 @@ CFLAGS  = -Wall -Wextra -Werror -ffast-math -O3
 INCLUDES = -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(MLX)
 
 #mlx
-MLX = /Users/${USER}/MLX42
+MLX = ~Desktop/MLX42
 
 MLX42_DIR = /Users/${USER}/MLX42
 
 INCLUDES = -I$(INCLUDE_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(MLX42_DIR)/include
 
-LIBS = -L$(LIBFT_DIR) -lft $(MLX42_DIR)/build/libmlx42.a \
-       -framework OpenGL -framework Cocoa -framework IOKit -framework CoreFoundation \
-       -L"/Users/${USER}/goinfre/homebrew/Cellar/glfw/3.4/lib" -lglfw -lm
+
+# LIBS = -L$(LIBFT_DIR) -lft $(MLX42_DIR)/build/libmlx42.a \
+#        -framework OpenGL -framework Cocoa -framework IOKit -framework CoreFoundation \
+#        -L"/Users/${USER}/goinfre/homebrew/Cellar/glfw/3.4/lib" -lglfw -lm
+
+GLFW_PREFIX  := $(shell brew --prefix glfw)
+GLFW_LIB_DIR := $(GLFW_PREFIX)/lib
+GLFW_INC_DIR := $(GLFW_PREFIX)/include
+
+LIBS = -L$(LIBFT_DIR) -lft \
+       $(MLX42_DIR)/build/libmlx42.a \
+       -L$(GLFW_LIB_DIR) -lglfw3 -lm \
+       -framework OpenGL -framework Cocoa -framework IOKit -framework CoreFoundation
 
 
 

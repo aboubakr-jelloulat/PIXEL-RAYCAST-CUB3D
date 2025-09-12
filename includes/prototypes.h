@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:43:47 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 17:54:39 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/09/12 12:27:26 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,25 @@ int		skip_spaces(char **line);
 
 int		validate_and_set_player(t_cub *cub);
 void	set_player(t_cub *cub, int x, int y, int angle);
+
+
+
 /*     Randring  / Recast      */
-// player
-void    clear_player(t_cub *cub);
-void	draw_player(t_cub *cub);
+
+// draw
+void    draw_line(t_cub *cub, float start_x, int i);
+void    draw_loop(void *param);
 
 // hooks
-void    key_handler(mlx_key_data_t key, void *param);
-void	render_player(void *param);
+void key_handler(mlx_key_data_t key, void *param);
+void move_player(void *param);
 
-// drawing
-void	draw_square(t_cub *cub, int x, int y, int w, int h, int color);
-void    draw_celling_and_ground(t_cub *cub);
-void	draw_map(t_cub *cub);
+// render
+void clear_image(t_cub *cub);
+float distance(float x, float y);
+float fixed_dist(t_cub *cub, float x1, float y1, float x2, float y2);
+bool touch(t_cub *cub, float px, float py);
 
+// main
 
 #endif

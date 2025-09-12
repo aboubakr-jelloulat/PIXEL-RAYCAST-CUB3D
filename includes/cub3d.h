@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/04 19:58:55 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/12 11:19:47 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,9 @@
 # define RED "\033[31m"
 # define RESET "\033[0m"
 
-
-# define tile_w 64
-# define tile_h 64
-# define FOV PI / 30
+# define WIDTH 1280
+# define HEIGHT 720
+# define BLOCK 64
 # define PI 3.14159265359
-# define WIDTH 16 * 64
-# define HEIGHT 10 * 64
 
 #endif
