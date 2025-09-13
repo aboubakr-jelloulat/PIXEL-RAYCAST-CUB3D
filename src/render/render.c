@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 18:55:37 by ael-krai          #+#    #+#             */
-/*   Updated: 2025/09/12 12:26:02 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/13 18:29:47 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ bool touch(t_cub *cub, float px, float py)
     y = py / BLOCK;
     if (y < 0 || y >= cub->map.height || x < 0 || x >= cub->map.width)
         return (true);
-    return (cub->map.map[y][x] == '1');
+    if (cub->map.map[y][x] == '1')
+        return (true);
+    return (false);
 }
 
 void clear_image(t_cub *cub)

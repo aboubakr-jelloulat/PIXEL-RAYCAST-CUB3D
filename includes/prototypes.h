@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:43:47 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/12 12:27:26 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/13 16:24:50 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,7 @@ bool touch(t_cub *cub, float px, float py);
 
 // main
 
+void cast_ray(t_cub *cub, float angle, float *hit_x, float *hit_y, float *perp_dist);
+
 #endif
+

@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/12 11:24:57 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/13 16:24:00 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,25 @@
 
 # include "cub3d.h"
 # include "structs.h"
+
+typedef struct s_dda
+{
+	float	pos_x;
+	float	pos_y;
+	float	ray_dir_x;
+	float	ray_dir_y;
+	float	delta_dist_x;
+	float	delta_dist_y;
+	float	side_dist_x;
+	float	side_dist_y;
+	int		map_x;
+	int		map_y;
+	int		step_x;
+	int		step_y;
+	int		side;
+}	t_dda;
+
+
 
 typedef struct s_map_row
 {

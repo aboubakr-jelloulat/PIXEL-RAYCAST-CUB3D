@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/12 11:19:47 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/13 19:38:01 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@
 # define RED "\033[31m"
 # define RESET "\033[0m"
 
+# define PI 3.14159265359f
+# define FOV (PI / 3.0f)
 # define WIDTH 1280
 # define HEIGHT 720
 # define BLOCK 64
-# define PI 3.14159265359
+# define PLAYER_SPEED 6.0f
+# define ANGLE_SPEED 0.03f
+
 
 #endif
