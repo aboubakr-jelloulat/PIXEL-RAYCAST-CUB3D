@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:42:12 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/13 16:24:00 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/18 14:35:19 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_player
     bool	key_right;
     bool	left_rotate;
     bool	right_rotate;
+	float	dist_proj_plane;
 }   t_player;
 
 
@@ -100,6 +101,7 @@ typedef struct s_cub
 	mlx_image_t		*image;
 	t_player		player;
 	mlx_t			*mlx;
+	t_dda			*dda;
 	t_map			map;
 }	t_cub;
 

@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 19:26:57 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/13 19:38:01 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:01:39 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@
 # define BLOCK 64
 # define PLAYER_SPEED 6.0f
 # define ANGLE_SPEED 0.03f
+
+# define COLOR_WALL   0xFFFFFF
+# define COLOR_RAY    0xFF0000
+# define COLOR_PLAYER 0x00FF00
+# define COLOR_BG     0x000000
+
+# define DEG2RAD(a) ((a) * PI / 180.0f)
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 18:55:37 by ael-krai          #+#    #+#             */
-/*   Updated: 2025/09/13 18:29:47 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:54:42 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void clear_image(t_cub *cub)
         x = 0;
         while (x < WIDTH)
         {
-            mlx_put_pixel(cub->image, x, y, 0);
+            mlx_put_pixel(cub->image, x, y, 0x000000);
             x++;
         }
         y++;

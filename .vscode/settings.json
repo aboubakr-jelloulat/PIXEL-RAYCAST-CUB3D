@@ -3,6 +3,10 @@
         "cub3d.h": "c",
         "system_error": "c",
         "libft.h": "c",
-        "__node_handle": "c"
+        "__node_handle": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "vector": "c"
     }
 }

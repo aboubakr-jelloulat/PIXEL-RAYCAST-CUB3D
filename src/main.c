@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:09:43 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/13 18:45:44 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:52:06 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	init_game(t_cub *cub)
 {
-	cub->player.x = WIDTH / 2;
-    cub->player.y = HEIGHT / 2;
-    cub->player.angle = PI / 2;
+	cub->player.x *= BLOCK;
+    cub->player.y *= BLOCK;
+	cub->player.angle = cub->player.radius;
     cub->player.key_up = false;
     cub->player.key_down = false;
     cub->player.key_right = false;
@@ -25,6 +25,7 @@ void	init_game(t_cub *cub)
     cub->player.right_rotate = false;
 	cub->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
 	cub->image = mlx_new_image(cub->mlx, WIDTH, HEIGHT);
+	mlx_image_to_window(cub->mlx, cub->image, 0, 0);
 }
 
 int	main(int ac, char **av)
@@ -37,7 +38,6 @@ int	main(int ac, char **av)
 	init_game(&cub);
 	mlx_key_hook(cub.mlx, key_handler, &cub);
 	mlx_loop_hook(cub.mlx, draw_loop, &cub);
-	mlx_image_to_window(cub.mlx, cub.image, 0, 0);
 	mlx_loop(cub.mlx);
 	return (shutdown_cub(&cub), 0);
 }

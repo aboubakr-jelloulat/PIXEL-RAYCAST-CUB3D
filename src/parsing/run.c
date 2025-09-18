@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 20:21:30 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/09/12 17:59:14 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/16 21:14:07 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ int	load_map_data(t_cub *cub, int ac, char **av)
 	close(fd);
 	if (validate_and_set_player(cub) == 1)
 		return (1);
+	// debug(cub);
 	return (0);
 }
