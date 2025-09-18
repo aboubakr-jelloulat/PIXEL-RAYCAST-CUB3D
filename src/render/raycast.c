@@ -6,7 +6,7 @@
 /*   By: ael-krai <ael-krai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 16:19:24 by ael-krai          #+#    #+#             */
-/*   Updated: 2025/09/18 16:52:37 by ael-krai         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:58:23 by ael-krai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void cast_ray(t_cub *cub, float angle, float *hit_x, float *hit_y, float *perp_d
         *perp_dist = (dda.side_dist_y - dda.delta_dist_y) * BLOCK;
     if (*perp_dist < 0.1f)
         *perp_dist = 0.1f;
+        
     *hit_x = cub->player.x + dda.ray_dir_x * (*perp_dist);
     *hit_y = cub->player.y + dda.ray_dir_y * (*perp_dist);
 }
