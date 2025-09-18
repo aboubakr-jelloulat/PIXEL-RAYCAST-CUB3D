@@ -3,8 +3,8 @@ SO textures/wall_so.png
 EA textures/wall_ea.png
 WE textures/wall_we.png
 
-F 40,40,00
-C 210,210,210
+F 255,0,0
+C 0,255,0
 
 
   	111
